@@ -1,6 +1,7 @@
 {
   "name": "crypto-price",
   "version": "0.1.0",
+  "homepage": "https://ehtd.github.io/CryptoPriceWeb",
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
