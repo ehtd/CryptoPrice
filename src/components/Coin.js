@@ -9,7 +9,7 @@ const Coin = (props) => {
 			<ul className="">
 				<li>{info.symbol}</li>
 				<li>{info.name}</li>
-				<li>{formatPrice(info.price)}</li>
+				<li>{info.price}</li>
 				<li>{(info.lastUpdated).toString()}</li>
 			</ul>
 		</div>
