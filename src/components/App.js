@@ -12,7 +12,7 @@ class App extends Component {
       coins: []
     }
 
-    fetch('https://api.coinmarketcap.com/v1/ticker/')
+    fetch('https://api.coinmarketcap.com/v1/ticker/?limit=50')
     .then((resp) => resp.json())
     .then((data) => {
       this.setState({ coins: data });
@@ -24,14 +24,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container-horizontal">
         {
           this.state.coins.map((coin) => {
             const coinInfo = {
               name: coin.name,
               symbol: coin.symbol,
               price: formatPrice(coin.price_usd),
-              lastUpdated: formatDate(coin.last_updated)
+              lastUpdated: formatDate(coin.last_updated),
+              percent24h: Number(coin.percent_change_24h),
+              percent7d: Number(coin.percent_change_7d)
             }
             
             return <Coin key={coin.id} info={coinInfo}/>

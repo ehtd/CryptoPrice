@@ -1,0 +1,9 @@
+.container-horizontal {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 0 auto;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  background: #333333;
+}
