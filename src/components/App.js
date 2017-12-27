@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import Coin from './components/Coin';
-import { formatPrice, formatDate } from './helpers';
+import '../css/App.css';
+import Coin from './Coin';
+import { formatPrice, formatDate } from '../helpers';
 
 class App extends Component {
 
