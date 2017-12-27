@@ -20,8 +20,10 @@ const Coin = (props) => {
 							{ arrow }
 							<span className="coin-symbol"> {info.symbol} | {info.name}</span>
 						</div>
-						<span className="coin-price">{info.price}</span>
 					</div>
+				</li>
+				<li>
+					<span className="coin-price">{info.price}</span>
 				</li>
 			</ul>
 		</div>
