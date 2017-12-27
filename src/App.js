@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import getSamples from './sample';
 import Coin from './components/Coin';
 import { formatPrice, formatDate } from './helpers';
 
@@ -9,23 +8,25 @@ class App extends Component {
   constructor() {
     super();
 
-    this.updateCoins = this.updateCoins.bind(this);
-
     this.state = {
       coins: []
     }
-  }
 
-  updateCoins(coins) {
-    this.setState({ coins });
+    fetch('https://api.coinmarketcap.com/v1/ticker/')
+    .then((resp) => resp.json())
+    .then((data) => {
+      this.setState({ coins: data });
+    })
+    .catch( (error) => {
+      console.log('API request failed:', error);
+    }) 
   }
 
   render() {
-    const samples = getSamples();
     return (
       <div>
         {
-          samples.map((coin) => {
+          this.state.coins.map((coin) => {
             const coinInfo = {
               name: coin.name,
               symbol: coin.symbol,

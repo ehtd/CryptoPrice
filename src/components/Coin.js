@@ -1,5 +1,4 @@
 import React from 'react';
-import { formatPrice } from '../helpers';
 
 const Coin = (props) => {
 	const info = props.info;
